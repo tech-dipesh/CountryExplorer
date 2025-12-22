@@ -1,0 +1,44 @@
+#backButton{
+    display: flex;
+    margin-top: 1rem;
+    position: relative;
+}
+#image{
+    max-height: 29rem;
+    max-width: 30rem;
+    max-height: 250px;
+}
+#i{
+    margin: 5px;
+}
+
+.loading{
+    margin-top: 15%;
+}
+
+
+image{
+    max-height: 250px;
+}
+
+/* Keep only this - remove all other dark/light mode rules */
+main.dark h1,
+main.dark h2,
+main.dark h3,
+main.dark h4,
+main.dark h5,
+main.dark h6,
+main.dark p {
+    color: white;
+}
+
+/* Default light mode */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main p {
+    color: black;
+}
