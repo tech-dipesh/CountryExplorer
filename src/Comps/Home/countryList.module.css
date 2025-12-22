@@ -1,0 +1,35 @@
+.topHead{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 2%;
+}
+
+.innerMap{
+  background-color: #007bff;
+  /* height: 250px; */
+  padding: 40px;
+  flex: 0 0 calc((100% - 5rem) / 4);
+  /* width: 100%; */
+    /* box-sizing: border-box;  */
+}
+
+#shimmer{
+  font-size: 100px;
+  background-color: gray;
+  height: 350px;
+  border-radius: 10px;
+}
+
+
+.seeMore{
+    color: #007bff;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.seeMore:hover{
+  padding: 6px;
+  color: rgb(227, 209, 209);
+}
