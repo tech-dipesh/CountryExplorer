@@ -19,6 +19,7 @@
 
 image{
     max-height: 250px;
+    object-fit: cover;
 }
 
 /* Keep only this - remove all other dark/light mode rules */

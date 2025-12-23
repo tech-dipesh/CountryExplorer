@@ -1,14 +1,17 @@
-import { faCircleQuestion, faUnderline, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import {  faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import {DarklightMode} from "../../../hooks/DarkLightmode.js"
+
+import React, { useContext, useEffect, useState } from 'react'
 import style from "./individualCountry.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useLocation, useOutletContext, useParams } from 'react-router';
-import NoCountry from '../Misc/noCountry';
+import { useLocation, useParams } from 'react-router';
+import NoCountry from './noCountry';
 import Border from './Border';
 import Shimmer from '../Home/Shimmer';
 import IndiShimmer from './IndiShimmer';
-export const IndividualCountry = ({value}) => {
+import { ThemeContext } from '../../contexts/ThemeContextProvider';
+export const IndividualCountry = () => {
 
   const getStateValue=useLocation().state;
   // location.href=`$?name={value.name?.common}`
@@ -62,10 +65,9 @@ export const IndividualCountry = ({value}) => {
        axios.get(url)
        .then(t=>{
             const datas=t.data[0];
-            setData(datas);
+            return setData(datas);
        }) 
        .then(b=>{
-        console.log(b.data);
         if(b){
           const names = b.data.map(country => 
           country.name.common.replaceAll(' ', '').toLowerCase()
@@ -74,12 +76,13 @@ export const IndividualCountry = ({value}) => {
         }
        })
        .catch(c=>{
+        console.log(c);
         setIfCountryNotFound(true);
        })
   }, [getCountryName])
   
-  const [changeToggle, setChangeToggle]=useOutletContext();
-  console.log(changeToggle, setChangeToggle);
+
+  const [changeToggle]=DarklightMode();
 
   if(ifCountryNotFound==true){
     return <NoCountry/>
@@ -102,22 +105,22 @@ export const IndividualCountry = ({value}) => {
   return loading===null? (
     <div className={style.loading}><IndiShimmer/></div>)
     :  (
-    <main className={changeToggle && 'dark'}>
+    <main className={changeToggle ? 'dark' : ''}>
     <button onClick={()=>history.back()} id={style.backButton}><FontAwesomeIcon id={style.i} icon={faArrowLeft} />Go Backward</button>
     <h1>Country Name: {name?.common}</h1>
     <p>Official Name: {name?.official}</p>
     {
     loading &&
     <>
-    <h3>Native Name: {nativFulleName}</h3>  
-    <h3>Native Common Name: {nativeCommonName}</h3>   
-    <h3>Currency Name: {currencies.name}</h3>
-    <h3>Currency Symbol: {currencies.symbol}</h3>
+    <h3>Native Name: {nativFulleName || ''}</h3>  
+    <h3>Native Common Name: {nativeCommonName|| ''}</h3>   
+    <h3>Currency Name: {currencies.name || ''}</h3>
+    <h3>Currency Symbol: {currencies.symbol || ''}</h3>
     </>
 }
 
 
-    <h4>Capital City: {capital}</h4>
+    <h4>Capital City: {capital || ''}</h4>
     <h3>Continent: {region}</h3>
     <p>Independenty Country: {indepedent===true?'Yes': 'NO'}</p>
     <h5>SubRegion: {subregion}</h5>
