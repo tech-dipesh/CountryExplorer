@@ -1,0 +1,9 @@
+.title{
+    margin-top: 5rem;
+    background-color: gray;
+    height: 50px;
+    width: 50rem;
+    display: inline-block;
+    border-radius: 10px;
+}
+
