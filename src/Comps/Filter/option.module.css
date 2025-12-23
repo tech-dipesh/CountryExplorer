@@ -1,0 +1,12 @@
+#select{
+  height: 25px;
+  cursor: pointer;
+left: 40%;
+bottom: 5%;
+position: relative;
+
+}
+
+option{
+  cursor: pointer;
+}
