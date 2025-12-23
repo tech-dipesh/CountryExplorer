@@ -1,18 +1,15 @@
 import './App.css'
-import Country from './Comps/Home/countryList'
- import Filter from "./Comps/Filter/filter"
-import { useState } from 'react'
+import Header from './Comps/Header/header.jsx'
+import { Outlet } from 'react-router-dom'
+import DarkThemeContextProvider from './contexts/ThemeContextProvider'
 
- const App=()=>{
-    const [value, setValue]=useState("");
-    const [length, setLength]=useState(false);
-    
+const App = () => {
   return (
-    <main>
-      <Filter setValue={setValue}/>
-      {/* {length==false?  <Country inputValue={value} setLength={setLength}/>: <EmptyComp/>} */}
-      <Country inputValue={value} setLength={setLength}></Country>
-   </main>
+    <DarkThemeContextProvider>
+      <Header/>
+      <Outlet/>
+    </DarkThemeContextProvider>
+
   )
 }
 
