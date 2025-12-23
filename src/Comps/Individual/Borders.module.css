@@ -1,0 +1,17 @@
+#head{
+      display: flex;
+    gap: 5%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#border{
+      margin-top: 2%;
+    position: relative;
+    gap: 1rem;
+    display: flex;
+}
+
+.btn{
+  background-color: gray;
+  padding: 10px;
+}
