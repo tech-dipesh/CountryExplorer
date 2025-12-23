@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import countryList from '../../Data/countryList'
 import styles from "./countryList.module.css"
 import Eachcomp from './eachComp';
 import { IndividualCountry } from '../Individual/individualCountry';
@@ -8,7 +7,7 @@ import Shimmer from './Shimmer';
 import axios from 'axios';
 import { Link } from 'react-router';
 import { AllSearchFilter } from '../../../hooks/searchFilter';
-export default function Country({ inputValue, setLength }) {
+export default function Country({ searchValue, regionValue, setLength }) {
   const [allCountry, setAllCountry]=useState([])
   useEffect(() => {
     axios.get('https://restcountries.com/v3.1/all?fields=name,flags,population,region')
@@ -17,28 +16,12 @@ export default function Country({ inputValue, setLength }) {
     },)
   }, [])
   
-
-
-  // let listArray = countryList.filter(f => {
-  //   const Region=(f.region.replaceAll(' ', ''))
-
-  //   // console.log(Region==inputValue);
-
-
-  //   console.log(Region.includes(inputValue));
-  //   return Region.includes(inputValue);
-    
-  // })
-  
-  let listArray = countryList.filter(f => {
-  const countryName = f.name?.common?.toLowerCase().replaceAll(' ', '') ?? '';
-const regionName = f.region?.toLowerCase().replaceAll(' ', '') ?? '';
-return countryName.includes(inputValue) || regionName.includes(inputValue);
-
-  })
-
-
-
+   const listArray = allCountry.filter(c => {
+    const names = c.name?.common?.toLowerCase() || '';
+    const region = c.region?.toLowerCase() || '';
+    return (!searchValue || names.includes(searchValue.toLowerCase().trim()))
+      && (!regionValue || region === regionValue.toLowerCase().trim());
+  });
   
   listArray.length == 0 ? setLength(true) : setLength(false)
 
