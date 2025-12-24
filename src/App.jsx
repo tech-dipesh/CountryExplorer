@@ -9,8 +9,6 @@ const App = () => {
       <Header/>
       <Outlet/>
     </DarkThemeContextProvider>
-
   )
 }
-
 export default App

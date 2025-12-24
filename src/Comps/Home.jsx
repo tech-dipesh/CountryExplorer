@@ -8,7 +8,6 @@ const Home = () => {
     const [input, setInput] = useState("");
     const [region, setRegion]=useState("");
 
-
     const [length, setLength] = useState(false);
 
     const [changeToggle]=DarklightMode();
