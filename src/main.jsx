@@ -1,4 +1,4 @@
-import { StrictMode} from 'react'
+import { lazy, StrictMode} from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -8,8 +8,8 @@ import { createBrowserRouter } from 'react-router'
 import Error from './Comps/Misc/Error.jsx'
 import Contact from './Comps/Misc/Contact.jsx'
 import { IndividualCountry } from './Comps//Individual/individualCountry.jsx'
-import About from './Comps/Misc/About.jsx'
 import Home from './Comps/Home.jsx'
+import About from "./Comps/Misc/About"
 const router = createBrowserRouter([
   {
     path: "/",

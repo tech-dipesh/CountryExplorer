@@ -7,7 +7,6 @@ import { useRouteError } from 'react-router'
 export default function Error() {
   const error=useRouteError()
   const {notFound, data, message, status, statusText}=error
-  // console.log(notFound, data, message, statusText);
   console.log(statusText);
   return (
     <>

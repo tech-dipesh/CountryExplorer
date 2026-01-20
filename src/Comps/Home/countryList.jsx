@@ -26,7 +26,6 @@ export default function Country({ searchValue, regionValue, setLength }) {
   listArray.length == 0 ? setLength(true) : setLength(false)
 
 
-
   return !allCountry.length ? (
   <Shimmer /> )
 : (
@@ -36,7 +35,7 @@ export default function Country({ searchValue, regionValue, setLength }) {
               listArray.length == 0 ? <EmptyComp /> : <Eachcomp children={i} key={i} img={c.flags.png} alt={c.flags.alt} country={c.name.common} population={c.population} area={c.area} region={c.region} />
             }
             {/* <Link to={`country/${c.name.common}`} className={styles.seeMore} state={{countryName: c.name.common, index: i}}>See More</Link> */}
-            <Link to={`./country/${c.name.common}`} className={styles.seeMore} state={c}>See More</Link>
+            <Link to={`../country/${c.name.common}`} className={styles.seeMore} state={c}>See More</Link>
           </div>
         ))}
       </div>
