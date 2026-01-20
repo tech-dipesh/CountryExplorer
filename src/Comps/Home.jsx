@@ -1,7 +1,7 @@
 import Country from './Home/countryList'
 import Filter from "./Filter/filter"
 import { useState } from 'react'
-import {DarklightMode} from "../../hooks/DarkLightmode.js"
+import {useDarklightMode} from "../../hooks/DarkLightmode.js"
 import { ThemeContext } from '../contexts/ThemeContextProvider';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
 
     const [length, setLength] = useState(false);
 
-    const [changeToggle]=DarklightMode();
+    const [changeToggle]=useDarklightMode();
   return (
     <main className={changeToggle?'dark': ''}>
       <Filter allInput={[setInput, setRegion]}/>

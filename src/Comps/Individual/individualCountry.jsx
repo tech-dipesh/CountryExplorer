@@ -1,6 +1,6 @@
 import {  faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import {DarklightMode} from "../../../hooks/DarkLightmode.js"
+import {useDarklightMode} from "../../../hooks/DarkLightmode.js"
 
 import React, { useContext, useEffect, useState } from 'react'
 import style from "./individualCountry.module.css";
@@ -82,7 +82,7 @@ export const IndividualCountry = () => {
   }, [getCountryName])
   
 
-  const [changeToggle]=DarklightMode();
+  const [changeToggle]=useDarklightMode();
 
   if(ifCountryNotFound==true){
     return <NoCountry/>

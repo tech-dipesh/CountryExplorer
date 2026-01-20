@@ -1,0 +1,187 @@
+.aboutContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.aboutHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.aboutHeader h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+}
+
+.aboutHeader p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.section h2 {
+  margin: 0 0 20px 0;
+  color: #2d3748;
+  font-size: 1.8rem;
+}
+
+.section article {
+  margin-bottom: 20px;
+}
+
+.section article:last-child {
+  margin-bottom: 0;
+}
+
+.section h3 {
+  color: #4a5568;
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+}
+
+.section p {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+
+.section ul,
+.section ol {
+  margin: 10px 0;
+  padding-left: 25px;
+  color: #4a5568;
+}
+
+.section li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.section code {
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #d63384;
+}
+
+.section pre {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.section pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.section strong {
+  color: #2b6cb0;
+  font-weight: 600;
+}
+
+.aboutFooter {
+  margin-top: 50px;
+  padding: 30px 20px;
+  text-align: center;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.homeButton {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #2b7fff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 15px;
+}
+
+.homeButton:hover {
+  background-color: #1e5fcc;
+  transform: translateY(-2px);
+}
+
+.homeButton:active {
+  transform: translateY(0);
+}
+
+.lastUpdated {
+  margin: 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .aboutContainer {
+    padding: 15px;
+  }
+
+  .aboutHeader {
+    padding: 20px 15px;
+    margin-bottom: 25px;
+  }
+
+  .aboutHeader h1 {
+    font-size: 1.8rem;
+  }
+
+  .aboutHeader p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.2rem;
+  }
+
+  .section p,
+  .section li {
+    font-size: 0.95rem;
+  }
+
+  .aboutFooter {
+    padding: 20px 15px;
+    margin-top: 30px;
+  }
+
+  .homeButton {
+    width: 100%;
+    padding: 15px 20px;
+  }
+}
