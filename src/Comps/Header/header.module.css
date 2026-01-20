@@ -7,10 +7,14 @@
   align-items: center;
   justify-content: center;
 }
+img{
+  cursor:pointer;
+  margin:0 10px 0 10px;
 
+}
 ul {
   display: flex;
-  gap: 10rem;
+  gap: 8rem;
   font-size: 25px;
   align-items: center;
   margin: 0;
@@ -53,4 +57,9 @@ ul li a {
 
 #toggle {
   font-size: 20px;
+}
+@media (min-width: 600px) {
+  header{
+    grid-area: 1 / span 6;
+  }
 }
